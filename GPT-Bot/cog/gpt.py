@@ -28,20 +28,21 @@ openai.api_key = OPENAI_API_KEY
 # # # # # # # # # # # # # # # # # # # # # # # #
 
 
+async def get_chat(prompt):
+    completion = openai.ChatCompletion.create(
+        n=1,
+        model="gpt-3.5-turbo",
+        messages=[
+            {"role": "user", "content": prompt},
+        ],
+    )
+    return completion.choices[0].message.content
+
+
 class gpt(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
         self.t = None
-
-    async def get_chat(self, prompt):
-        completion = openai.ChatCompletion.create(
-            n=1,
-            model="gpt-3.5-turbo",
-            messages=[
-                {"role": "user", "content": prompt},
-            ],
-        )
-        return completion.choices[0].message.content
 
     async def is_user_in_db(self, user_id, guild_id):
         async with aiosqlite.connect("openai.db") as db:
@@ -92,7 +93,7 @@ class gpt(commands.Cog):
             msg = await message.reply(f"Please wait ...")
             await self.add_user_to_db(message.author.id, message.guild.id)
             try:
-                self.t = await self.get_chat(message.content)
+                self.t = await get_chat(message.content)
             except Exception as e:
                 print(e)
                 await msg.edit(content="An error occurred. Please try again later.")
