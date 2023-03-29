@@ -10,6 +10,7 @@
 """
 # ----------------- WATERMARK ----------------- #
 
+
 import os
 import openai
 import aiosqlite
