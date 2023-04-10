@@ -1,3 +1,15 @@
+# ----------------- WATERMARK ----------------- #
+"""
+ ________  ________ ________     
+|\   __  \|\  _____\\   ____\    
+\ \  \|\  \ \  \__/\ \  \___|    
+ \ \   __  \ \   __\\ \  \       
+  \ \  \ \  \ \  \_| \ \  \____  
+   \ \__\ \__\ \__\   \ \_______\
+    \|__|\|__|\|__|    \|_______|
+"""
+# ----------------- WATERMARK ----------------- #
+
 from quart import Quart, render_template, url_for
 from datetime import datetime
 from func.news import get_latest
