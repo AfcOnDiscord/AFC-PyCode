@@ -30,6 +30,9 @@ async def _searchWeb():
 async def _weather(city):
     weather = await get_weather(city)
 
+    if weather is None:
+        return await render_template('error.html')
+
     temp_celsius = weather.get('temp_celsius')
     windSpeedKmh = weather.get('windSpeedKmh')
     humidity = weather.get('humidity')

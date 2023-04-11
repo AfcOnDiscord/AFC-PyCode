@@ -64,4 +64,4 @@ async def get_weather(city):
         return weather
     except Exception as e:
         print(e)
-        return f"Die Stadt {city} wurde nicht gefunden."
+        return None
