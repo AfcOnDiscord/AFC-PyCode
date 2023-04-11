@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://45.155.173.227:2711/">
+    <meta property="og:title" content="Weather by AFC">
+    <meta property="og:description"
+        content="Weather by AFC is a simple weather app that shows the weather for your city or country.">
+    <meta property="og:image" content="https://i.imgur.com/nzM2IrB.jpg">
+    <link rel="icon" href="https://i.imgur.com/yTkR6yT.png" type="image/x-icon" />
+    <title>Weather - AFC</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(45deg, #9AC9FB, #AED581);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 600px;
+            text-align: center;
+            padding: 50px 20px;
+            background-color: #FFF;
+            border-radius: 10px;
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            font-size: 40px;
+            font-weight: bold;
+            color: #444;
+            margin-top: 0;
+        }
+
+
+        .temp {
+            font-size: 72px;
+            font-weight: bold;
+            color: #444;
+            margin: 0;
+        }
+
+        p {
+            font-size: 24px;
+            color: #444;
+            margin-bottom: 10px;
+        }
+
+        img {
+            vertical-align: middle;
+            margin-left: 10px;
+        }
+    </style>
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Weather for {{ city }}<img src="{{ iconLink }}" alt="Weather Icon"></h1>
+        <p><span class="temp">{{ temp_celsius }}</span>°C</p>
+        <p>Humidity: {{ humidity }}%</p>
+        <p>Wind: {{ windSpeedKmh }} km/h</p>
+        <p>Sunrise: {{ sunriseTime }}</p>
+        <p>Sunset: {{ sunsetTime }}</p>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:url" content="http://45.155.173.227:2711/">
+    <meta property="og:title" content="Weather by AFC">
+    <meta property="og:description"
+        content="Weather by AFC is a simple weather app that shows the weather for your city or country.">
+    <meta property="og:image" content="https://i.imgur.com/nzM2IrB.jpg">
+    <link rel="icon" href="https://i.imgur.com/yTkR6yT.png" type="image/x-icon" />
+    <title>Weather - AFC</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(45deg, #9ac9fb, #aed581);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        input[type="text"] {
+            padding: 0.5rem 1rem;
+            font-size: 1rem;
+            border-radius: 0.5rem;
+            border: 2px solid transparent;
+            margin-bottom: 1rem;
+            transition: border-color 0.3s ease-in-out;
+        }
+
+        input[type="text"]:focus {
+            outline: none;
+            border-color: #04aa6d;
+        }
+
+        input[type="text"]:hover {
+            border-color: #04aa6d;
+        }
+
+        input[type="submit"] {
+            background-color: #04aa6d;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            border: none;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0b875b;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="display: flex; justify-content: center; align-items: center; height: 100%">
+        <form method="POST" action="">
+            <input type="text" name="city" placeholder="Enter a city/country" onfocus="this.placeholder=''"
+                onblur="this.placeholder='Enter a city/country'" />
+            <input type="submit" value="Submit" />
+        </form>
+    </div>
+</body>
+
+</html>
