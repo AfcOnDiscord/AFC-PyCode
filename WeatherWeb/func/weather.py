@@ -28,6 +28,7 @@ async def kelvin_to_celsius(kelvin):
 
 async def get_weather(city):
     URL = f"{BASE_URL}appid={API_KEY}&q={city}"
+    print(API_KEY)
     async with aiohttp.ClientSession() as session:
         async with session.get(URL) as resp:
             text = await resp.json()
